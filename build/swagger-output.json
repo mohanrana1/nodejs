@@ -1,0 +1,287 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "api documentation",
+        "description": "Description",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000/"
+        }
+    ],
+    "tags": [
+        {
+            "name": "student",
+            "description": ""
+        },
+        {
+            "name": "teacher",
+            "description": ""
+        }
+    ],
+    "paths": {
+        "/student/": {
+            "get": {
+                "tags": [
+                    "student"
+                ],
+                "description": "",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "student"
+                ],
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#components/schemas/studentSchema"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/student/{id}": {
+            "get": {
+                "tags": [
+                    "student"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "student"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "student"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/teacher/": {
+            "get": {
+                "tags": [
+                    "teacher"
+                ],
+                "description": "",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "teacher"
+                ],
+                "description": "",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#components/schemas/studentSchema"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/teacher/{id}": {
+            "get": {
+                "tags": [
+                    "teacher"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "teacher"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "teacher"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "studentSchema": {
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "type": "string",
+                        "example": "Abhi"
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "example": "Bhattarai"
+                    },
+                    "age": {
+                        "type": "number",
+                        "example": 21
+                    }
+                },
+                "required": [
+                    "firstName",
+                    "lastName"
+                ]
+            },
+            "teacherSchema": {
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "type": "string",
+                        "example": "Ashish"
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "example": "Pantha"
+                    },
+                    "age": {
+                        "type": "number",
+                        "example": 29
+                    }
+                },
+                "required": [
+                    "firstName",
+                    "lastName"
+                ]
+            }
+        },
+        "examples": {
+            "studentExample": {
+                "value": {
+                    "firstName": "Abhi",
+                    "lastName": "Bhattarai",
+                    "age": 21
+                },
+                "summary": "Examples of students"
+            },
+            "teacherExample": {
+                "value": {
+                    "firstName": "Ashish",
+                    "lastName": "Pantha",
+                    "age": 29
+                },
+                "summary": "Examples of Teachers"
+            }
+        }
+    }
+}

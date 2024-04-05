@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        .message-container{
+            display: flex;
+            height: 40vw;
+            justify-content: center;
+            align-items: center;
+            animation-name: colorchange;
+            animation-iteration-count: infinite;
+            animation-duration: 4s;
+            
+        }
+        .login-message{
+            display: flex;
+            place-content: center;
+            font-size: 40px;
+            font-weight: bold;
+            
+
+
+        }
+
+        @keyframes colorchange {
+            0%   {top: 0px; left: 0px; color: red;}
+  25%  {top: 0px; left: 100px; color: blue;}
+  50%  {top: 100px; left: 100px; color: yellow;}
+  75%  {top: 100px; left: 0px; color: green;}
+  100% {top: 0px; left: 0px; color: red;}
+        }
+    </style>
+</head>
+<body >
+    <div class="message-container">
+        <p class="login-message"> You have successfully logged In</p>
+    </div>
+</body>
+</html>
